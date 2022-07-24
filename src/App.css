@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Ubuntu';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 1.2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-container {
+  width: 100%;
+  height: 75px;
+  background: rgb(120, 182, 253);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.logo-container {
+  width: 25%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo-text {
+  font-family: 'Bubblegum Sans';
+  font-size: 1.5rem;
+  font-weight: 700;
+  
+}
+
+.navlinks-container {
+  font-family: 'Bubblegum Sans';
+  font-weight: 400;
+  font-size: 1.4rem;
+  
+}
+
+.navlink {
+  margin: 0 15px;
+}
+
+.welcome-message-container {
+  width: 100%;
+  margin: 10px 0;
+  text-align: center;
 }
