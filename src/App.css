@@ -14,6 +14,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+  margin-bottom: 15px;
 }
 
 .logo-container {
@@ -42,4 +43,91 @@ h1 {
   width: 100%;
   margin: 10px 0;
   text-align: center;
+}
+
+.page-header {
+  width: 100%;
+  margin: 10px 0 25px 0;
+}
+
+.page-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-input-container {
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+
+.auth-input {
+  width: 80%;
+  max-width: 500px;
+  font-size: 1.1rem;
+  margin: 10px;
+}
+
+.show-password-button {
+  font-size: 1.4rem;
+  margin: auto 10px;
+}
+
+.forgot-password-link {
+  margin: 0 0 25px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.auth-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  background: rgb(97, 97, 97);
+  padding: 5px 10px 5px 25px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.auth-button:hover {
+  background-color: rgb(67, 123, 187);
+}
+
+.auth-caret {
+  padding: 10px 10px 6px 10px;
+  font-size: 1.4rem;
+  color: white;
+  margin: 2px 0 0 10px;
+}
+
+.instead-container {
+  margin: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-descriptor-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
