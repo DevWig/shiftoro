@@ -14,6 +14,16 @@ function Navbar() {
         <div className="logo-container">
           <h1 className="logo-text">SHIFTORO</h1>
         </div>
+        {(user.displayName) ?
+          <div className='welcome-message-container'>
+            <h1>Welcome, {user.displayName}!</h1>
+          </div>
+        :
+        <div></div>
+        }
+          <div className="welcome-meesage-container">
+
+          </div>
         <div className="navlinks-container">
           <Link to='/' className="navlink">Dashboard</Link>
           <Link to='/schedule' className="navlink">Schedule</Link>
@@ -27,13 +37,7 @@ function Navbar() {
 
         </div>
       </div>
-      {(location.pathname === '/') ? 
-        <div className='welcome-message-container'>
-          <h1>Welcome, {user.displayName}!</h1>
-        </div>
-      :
-        <div></div>
-      }
+      
       
     </>
   )
