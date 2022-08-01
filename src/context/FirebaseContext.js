@@ -1,5 +1,5 @@
 import { createContext, useReducer } from 'react'
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { getAuth, updateProfile } from 'firebase/auth'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
 
@@ -17,18 +17,23 @@ export const FirebaseProvider = ({children}) => {
   const auth = getAuth()
   const [state, dispatch] = useReducer(firebaseReducer, initialState);
 
+  const setUser = (user) => {
+    setLoading();
 
+
+    dispatch({
+      type: 'GET_USER',
+      payload: user,
+    }) 
+  }
   const getUser = () => {
     setLoading();
-    
-    if(auth.currentUser) {
-      console.log(auth.currentUser)
-      console.log(state.user)
-      dispatch({
-        type: 'GET_USER',
-        payload: auth.currentUser
-      })
-    }
+    let currentUser = auth.currentUser()
+
+    dispatch({
+      type: 'GET_USER',
+      payload: currentUser
+    })
   }
 
   const setLoading = () => dispatch({type: 'SET_LOADING'})
@@ -36,8 +41,8 @@ export const FirebaseProvider = ({children}) => {
   return <FirebaseContext.Provider value={{
     ...state,
     dispatch,
+    setUser,
     getUser,
-
   }}>
     {children}
   </FirebaseContext.Provider>
