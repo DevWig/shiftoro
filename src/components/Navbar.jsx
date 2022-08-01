@@ -1,11 +1,13 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import FirebaseContext from '../context/FirebaseContext'
 
 function Navbar() {
   const { user } = useContext(FirebaseContext)
+  const location = useLocation()
   console.log(user)
+
   return (
     <>
       <div className="navbar-container">
@@ -25,10 +27,14 @@ function Navbar() {
 
         </div>
       </div>
-
-      <div className='welcome-message-container'>
-        <h1>Welcome, {user.firstName}</h1>
-      </div>
+      {(location.pathname === '/') ? 
+        <div className='welcome-message-container'>
+          <h1>Welcome, {user.displayName}!</h1>
+        </div>
+      :
+        <div></div>
+      }
+      
     </>
   )
 }
